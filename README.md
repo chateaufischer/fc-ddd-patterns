@@ -10,6 +10,7 @@ O objetivo desta aula é ensinar como aplicar técnicas de modelagem tática do 
 
 O projeto está dividido em módulos, cada um representando uma parte específica da modelagem tática do DDD. Abaixo está a estrutura básica do projeto:
 
+```bash
 fc-ddd-patterns/
 ├── src/
 │   ├── domain/
@@ -24,6 +25,7 @@ fc-ddd-patterns/
 │   └── presentation/
 ├── tests/
 └── README.md
+```
 
 ## Requisitos
 
