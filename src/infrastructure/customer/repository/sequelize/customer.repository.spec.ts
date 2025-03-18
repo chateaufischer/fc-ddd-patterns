@@ -23,6 +23,30 @@ describe("Customer repository test", () => {
     await sequelize.close();
   });
 
+  it("should change name", () => {
+    const customer = new Customer("123", "John Doe");
+    customer.changeName("Jane Doe");
+    expect(customer.name).toBe("Jane Doe");
+  });
+
+  it("should activate a customer throw", () => {
+    const customer = new Customer("123", "John Doe");   
+
+    expect(() => {
+      customer.activate();
+    }).toThrow("Address is mandatory to activate a customer");
+  });
+
+  it("should activate a customer", () => {
+    const customer = new Customer("123", "John Doe");
+    const address = new Address("Street 1", 1, "Zipcode 1", "City 1");
+    customer.Address = address;
+    
+    expect(() => {
+      customer.activate();
+    }).not.toThrow();
+  });
+
   it("should create a customer", async () => {
     const customerRepository = new CustomerRepository();
     const customer = new Customer("123", "Customer 1");
