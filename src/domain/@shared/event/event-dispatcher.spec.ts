@@ -5,7 +5,7 @@ import EventDispatcher from "./event-dispatcher";
 describe("Domain events tests", () => {
   it("should register an event handler", () => {
     const eventDispatcher = new EventDispatcher();
-    const eventHandler = new SendEmailWhenProductIsCreatedHandler();
+    const eventHandler = new SendEmailWhenProductIsCreatedHandler(); 
 
     eventDispatcher.register("ProductCreatedEvent", eventHandler);
 
@@ -74,9 +74,9 @@ describe("Domain events tests", () => {
       price: 10.0,
     });
 
-    // Quando o notify for executado o SendEmailWhenProductIsCreatedHandler.handle() deve ser chamado
     eventDispatcher.notify(productCreatedEvent);
 
     expect(spyEventHandler).toHaveBeenCalled();
   });
+
 });
