@@ -78,6 +78,8 @@ Handler:
 
 ### Testes: event-dispatcher-desafio.spec.ts
 
+![Eventos](./eventos.png)
+
 
 
 
